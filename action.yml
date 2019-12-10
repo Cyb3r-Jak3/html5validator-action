@@ -1,0 +1,13 @@
+name: 'HTML5 Validator'
+description: 'Checks HTML5 Syntax'
+inputs:
+  FPath:  # id of input
+    description: 'Path of the files to test'
+    required: true
+    default: '.'
+outputs:
+  result: # id of output
+    description: 'The result of the command'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

@@ -1,0 +1,14 @@
+name: Action Test
+
+on: [push]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Test Files
+      uses: Cyb3r-Jak3/html5validator-action@master
+      with:
+        FPath: tests/valid/index.html

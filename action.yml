@@ -1,7 +1,11 @@
 name: 'HTML5 Validator'
 description: 'Checks HTML5 Syntax'
+author: Cyb3r-Jak3
+branding:
+  icon: 'award'  
+  color: 'green'
 inputs:
-  FPath:  # id of input
+  Root:  # id of input
     description: 'Path of the files to test'
     required: true
     default: '.'

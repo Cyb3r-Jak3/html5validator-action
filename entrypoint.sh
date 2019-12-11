@@ -5,4 +5,4 @@ echo "Running Validator"
 
 html5validator "${INPUT_ROOT}" > output.txt
 
-echo ::set-output name=result::`echo output.txt`
+echo ::set-output name=result::"$(cat output.txt)"

@@ -1,6 +1,8 @@
 #!/bin/sh -l
 set -e
 
-echo `html5validator "${INPUT_ROOT}"`
+echo "Running Validator"
 
-echo ::set-output name=result::"Completed"
+html5validator "${INPUT_ROOT}" > output.txt
+
+echo ::set-output name=result::`echo output.txt`

@@ -14,4 +14,4 @@ jobs:
       with:
         Root: tests/valid/
     - name: Get information
-      run: echo "Output: ${{ steps.validate.outputs.result }}"
+      run: echo "Output > ${{ steps.validate.outputs.result }}"

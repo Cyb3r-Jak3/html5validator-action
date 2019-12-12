@@ -12,6 +12,9 @@ inputs:
   extra:
     description: "Extra arguments to test with"
     required: false
+  debug_flag:
+    description: "Preforms debugging tasks"
+    required: false
 outputs:
   result: # id of output
     description: 'The exit code'

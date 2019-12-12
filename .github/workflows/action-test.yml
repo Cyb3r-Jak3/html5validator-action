@@ -14,5 +14,6 @@ jobs:
       with:
         root: tests/valid/
         extra: "--log DEBUG"
+        debug_flag: true
     - name: Get information
       run: echo "Output > ${{ steps.validate.outputs.result }}"

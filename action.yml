@@ -9,8 +9,8 @@ inputs:
     description: 'Path of the files to test'
     required: true
     default: '.'
-  ad-args:
-    description: "Additional arguments to test with"
+  extra:
+    description: "Extra arguments to test with"
     required: false
 outputs:
   result: # id of output

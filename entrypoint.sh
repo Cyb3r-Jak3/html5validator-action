@@ -2,9 +2,9 @@
 set -e
 
 echo "Running Validator"
-echo ""
+echo "$INPUT_ROOT $INPUT_EXTRA"
 
-html5validator  --root "$INPUT_ROOT" "$INPUT_AD-ARGS"
+html5validator  --root "$INPUT_ROOT" "$INPUT_EXTRA"
 result=$?
 
 echo ::set-output name=result::$result

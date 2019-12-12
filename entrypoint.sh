@@ -3,7 +3,6 @@ set -e
 
 echo "Running Validator"
 echo ""
-html5validator --log DEBUG "$INPUT_ROOT" > output.txt
-cat output
+html5validator --log DEBUG --root "$INPUT_ROOT" > output.txt
 
-echo ::set-output name=result::"$(cat output.txt && echo "${INPUT_ROOT}" )"
+echo ::set-output name=result::"$(cat output.txt)"

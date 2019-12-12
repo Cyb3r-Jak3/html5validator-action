@@ -3,7 +3,11 @@ set -e
 
 echo "Running Validator"
 
-echo "html5validator  --root $INPUT_ROOT $INPUT_EXTRA"
+if "${{ secrets.DEBUG_FLAG }}" == "true"; then
+    echo "html5validator  --root $INPUT_ROOT $INPUT_EXTRA"
+    ls "$INPUT_ROOT"
+fi
+
 
 html5validator  --root "$INPUT_ROOT" "$INPUT_EXTRA"
 result=$?

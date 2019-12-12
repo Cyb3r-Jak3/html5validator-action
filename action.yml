@@ -9,7 +9,7 @@ inputs:
     description: 'Path of the files to test'
     required: true
     default: '.'
-  args:
+  ad-args:
     description: "Additional arguments to test with"
     required: false
 outputs:

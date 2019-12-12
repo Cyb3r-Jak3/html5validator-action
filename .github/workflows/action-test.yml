@@ -13,6 +13,6 @@ jobs:
       uses: Cyb3r-Jak3/html5validator-action@master
       with:
         root: tests/valid/
-        args: "--log DEBUG"
+        ad-args: --log DEBUG
     - name: Get information
       run: echo "Output > ${{ steps.validate.outputs.result }}"

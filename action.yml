@@ -1,17 +1,22 @@
 name: 'HTML5 Validator'
-description: 'Checks HTML5 Syntax'
+description: 'Checks HTML5 Syntax using html5validator'
 author: Cyb3r-Jak3
 branding:
   icon: 'award'  
   color: 'green'
 inputs:
-  Root:  # id of input
+  root:  # id of input
     description: 'Path of the files to test'
     required: true
     default: '.'
+  ad-args:
+    description: "Additional arguments to test with"
+    required: false
 outputs:
   result: # id of output
-    description: 'The result of the command'
+    description: 'The exit code'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.ad-args }}

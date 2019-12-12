@@ -13,5 +13,5 @@ jobs:
       uses: Cyb3r-Jak3/html5validator-action@master
       with:
         Root: tests/valid/
-    - name: Get the output time
+    - name: Get information
       run: echo "The time was ${{ steps.validate.outputs.result }}"

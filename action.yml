@@ -9,7 +9,7 @@ inputs:
     description: 'Path of the files to test'
     required: true
     default: '.'
-  ad-args:
+  args:
     description: "Additional arguments to test with"
     required: false
 outputs:
@@ -18,5 +18,3 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.ad-args }}

@@ -12,13 +12,12 @@ jobs:
       uses: Cyb3r-Jak3/html5validator-action@master
       with:
         root: tests/valid/
-        debug_flag: true
     - name: Test Files
       id: validate
       uses: Cyb3r-Jak3/html5validator-action@master
       with:
         root: tests/valid/
-        extra: --log DEBUG
+        extra: --format json
         debug_flag: true
     - name: Get information
       run: echo "Output > ${{ steps.validate.outputs.result }}"

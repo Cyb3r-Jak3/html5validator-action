@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - name: Default Test
+      uses: Cyb3r-Jak3/html5validator-action@master
+      with:
+        root: tests/valid/
+        debug_flag: true
     - name: Test Files
       id: validate
       uses: Cyb3r-Jak3/html5validator-action@master

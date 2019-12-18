@@ -9,7 +9,7 @@ if "$INPUT_DEBUG_FLAG" == "true"; then
 fi
 
 # For some reason adding the input extra causes it to error out
-html5validator "${INPUT_EXTRA}" --root "${INPUT_ROOT}"
+html5validator --root "${INPUT_ROOT}" "${INPUT_EXTRA}"
 result=$?
 
 echo ::set-output name=result::$result

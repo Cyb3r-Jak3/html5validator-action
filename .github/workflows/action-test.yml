@@ -17,7 +17,8 @@ jobs:
       uses: ./
       with:
         root: tests/valid/
-        extra: --format json
-        debug_flag: true
+        format: json
+        log_level: INFO
+        extra: -lll
     - name: Get information
       run: echo "Output > ${{ steps.validate.outputs.result }}"

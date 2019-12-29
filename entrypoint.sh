@@ -1,15 +1,17 @@
 #!/bin/bash
 set -e
 
-echo "Running Validator"
+function main() {
+    echo "Running Validator"
 
-if [[ -n "$INPUT_DEBUG_FLAG" ]]; then
-    echo "html5validator  --root ${INPUT_ROOT} ${INPUT_EXTRA}"
-    echo "Files in input directory $(find ${INPUT_ROOT})"
-fi
+    html5validator "${INPUT_EXTRA}" --log "${INPUT_LOG_LEVEL}" --format "${INPUT_FORMAT}" --root "${INPUT_ROOT}"
+    result=$?
 
-# For some reason adding the input extra causes it to error out
-html5validator ${INPUT_EXTRA} --root ${INPUT_ROOT}
-result=$?
+    echo ::set-output name=result::$result;
+}
 
-echo ::set-output name=result::$result
+function uses() {
+    [ -n "${1}" ]
+}
+
+main

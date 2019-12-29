@@ -12,9 +12,13 @@ inputs:
   extra:
     description: "Extra arguments to test with"
     required: false
-  debug_flag:
-    description: "Preforms debugging tasks"
+  format:
+    description: "Format for logging output. Valid values: gnu,xml,json,text"
     required: false
+  log_level:
+    description: "Logging Level. Valid values: DEBUG, INFO, WARNING. Default: WARNING"
+    required: false
+    default: "WARNING"
 outputs:
   result: # id of output
     description: 'The exit code'

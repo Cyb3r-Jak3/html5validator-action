@@ -7,7 +7,7 @@ function main() {
     BuildARGS=""
 
     if uses "${INPUT_FORMAT}"; then
-        BuildARGS+="--format \"${INPUT_FORMAT}\""
+        BuildARGS+="--format ${INPUT_FORMAT}"
     fi
 
 

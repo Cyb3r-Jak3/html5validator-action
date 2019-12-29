@@ -8,7 +8,7 @@ This action checks the syntax of your html files in the path that you provide. I
 
 **Required** The root path of the files you want to check. Default `"."`.
 
-### `Ad-args`
+### `Extra`
 
 Additional arguments to pass to html5validator.
 

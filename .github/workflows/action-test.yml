@@ -8,12 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Test Files
-      id: validate
-      uses: Cyb3r-Jak3/html5validator-action@master
+    - name: Default Test
+      uses: ./
       with:
         root: tests/valid/
-        extra: --log DEBUG
+    - name: Test Files
+      id: validate
+      uses: ./
+      with:
+        root: tests/valid/
+        extra: --format json
         debug_flag: true
     - name: Get information
       run: echo "Output > ${{ steps.validate.outputs.result }}"

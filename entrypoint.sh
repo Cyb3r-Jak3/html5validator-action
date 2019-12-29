@@ -4,7 +4,14 @@ set -e
 function main() {
     echo "Running Validator"
 
-    html5validator "${INPUT_EXTRA}" --log "${INPUT_LOG_LEVEL}" --format "${INPUT_FORMAT}" --root "${INPUT_ROOT}"
+    BuildARGS=""
+
+    if uses "${INPUT_FORMAT}"; then
+        BuildARGS+="--format \"${INPUT_FORMAT}\""
+    fi
+
+
+    html5validator "${INPUT_EXTRA}" "${BuildARGS}" --log "${INPUT_LOG_LEVEL}" --root "${INPUT_ROOT}"
     result=$?
 
     echo ::set-output name=result::$result;

@@ -10,7 +10,7 @@ fi
 
 # For some reason adding the input extra causes it to error out
 extra=${INPUT_EXTRA}
-html5validator "$extra" --root "${INPUT_ROOT}"
+html5validator "${extra}" --root "${INPUT_ROOT}"
 result=$?
 
 echo ::set-output name=result::$result

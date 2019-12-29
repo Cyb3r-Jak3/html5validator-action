@@ -30,5 +30,5 @@ The exit code of the validation.
 Please use the latest version and not master.
 
 ```yaml
- uses: Cyb3r-Jak3/html5validator-action@v0.1
+ uses: Cyb3r-Jak3/html5validator-action@v0.2
  ```

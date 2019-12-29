@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e.
 
 echo "Running Validator"
 
@@ -9,7 +9,7 @@ if [[ -n "$INPUT_DEBUG_FLAG" ]]; then
 fi
 
 # For some reason adding the input extra causes it to error out
-html5validator "${INPUT_EXTRA}" --root "${INPUT_ROOT}"
+html5validator ${INPUT_EXTRA} --root ${INPUT_ROOT}
 result=$?
 
 echo ::set-output name=result::$result

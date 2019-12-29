@@ -3,11 +3,11 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
-## [UNRELEASED]
+## [v0.2] - UNRELEASED
 
 ### Added
 
-- ad-args for additional arguments for html5validator.
+- args for additional arguments for html5validator.
 - Changelog
 
 ### Changed

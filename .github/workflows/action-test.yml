@@ -9,12 +9,12 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Default Test
-      uses: Cyb3r-Jak3/html5validator-action@master
+      uses: Cyb3r-Jak3/html5validator-action@extra-args 
       with:
         root: tests/valid/
     - name: Test Files
       id: validate
-      uses: Cyb3r-Jak3/html5validator-action@master
+      uses: Cyb3r-Jak3/html5validator-action@extra-args
       with:
         root: tests/valid/
         extra: --format json

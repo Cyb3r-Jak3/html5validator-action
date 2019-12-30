@@ -5,18 +5,30 @@ branding:
   icon: 'award'  
   color: 'green'
 inputs:
-  root:  # id of input
+  root:
     description: 'Path of the files to test'
     required: true
     default: '.'
   extra:
     description: "Extra arguments to test with"
     required: false
-  debug_flag:
-    description: "Preforms debugging tasks"
+  format:
+    description: "Format for logging output. Valid values: gnu,xml,json,text"
     required: false
+  log_level:
+    description: "Logging Level. Valid values: DEBUG, INFO, WARNING. Default: WARNING"
+    required: false
+    default: "WARNING"
+  css:
+    description: "Checks css as well"
+    require: false
+    default: false
+  action_debug:
+    description: "Flag that increase verbose output only used for troubleshooting the action."
+    required: false
+    default: false
 outputs:
-  result: # id of output
+  result:
     description: 'The exit code'
 runs:
   using: 'docker'

@@ -8,16 +8,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Default Test
+    - name: Plain Test
       uses: ./
       with:
         root: tests/valid/
-    - name: Test Files
+        action_debug: true
+    - name: Testing Options
       id: validate
       uses: ./
       with:
         root: tests/valid/
-        extra: --format json
-        debug_flag: true
+        format: json
+        log_level: INFO
+        extra: -lll
+        css: true
+        action_debug: true
     - name: Get information
-      run: echo "Output > ${{ steps.validate.outputs.result }}"
+      run: echo "Bash Exit Code > ${{ steps.validate.outputs.result }}"

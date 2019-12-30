@@ -1,15 +1,39 @@
 #!/bin/bash
 set -e
 
-echo "Running Validator"
+function main() {
+    echo "Running Validator"
 
-if [[ -n "$INPUT_DEBUG_FLAG" ]]; then
-    echo "html5validator  --root ${INPUT_ROOT} ${INPUT_EXTRA}"
-    echo "Files in input directory $(find ${INPUT_ROOT})"
-fi
+    if usesBoolean "${INPUT_ACTION_DEBUG}"; then
+        set -x
+    fi
 
-# For some reason adding the input extra causes it to error out
-html5validator ${INPUT_EXTRA} --root ${INPUT_ROOT}
-result=$?
+    BuildARGS=''
 
-echo ::set-output name=result::$result
+    if uses "${INPUT_FORMAT}"; then
+        BuildARGS+="--format ${INPUT_FORMAT}"
+    fi
+
+    if usesBoolean "${INPUT_CSS}"; then
+        BuildARGS+=" --also-check-css"
+    fi
+
+    if uses "${INPUT_EXTRA}"; then
+        BuildARGS+=" ${INPUT_EXTRA}"
+    fi
+
+    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS}
+    result=$?
+
+    echo ::set-output name=result::$result;
+}
+
+function uses() {
+    [ -n "${1}" ]
+}
+
+function usesBoolean() {
+  [ -n "${1}" ] && [ "${1}" = "true" ]
+}
+
+main

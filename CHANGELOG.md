@@ -11,7 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
   - CSS option.
   - Log Level.
   - Log Format.
-- New Actions that tests integration with Github Actions.
+- New action that tests integration with Github Actions.
 
 ### Removed
 

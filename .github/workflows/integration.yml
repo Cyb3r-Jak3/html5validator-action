@@ -1,4 +1,4 @@
-name: Integration Test
+name: Integration
 
 on:
   push:
@@ -14,3 +14,4 @@ jobs:
       uses: Cyb3r-Jak3/html5validator-action@master
       with:
         root: tests/valid/
+        log_level: INFO

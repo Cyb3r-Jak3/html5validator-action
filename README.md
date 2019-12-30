@@ -1,7 +1,9 @@
 # HTML5 Validator Action
 
-[![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Build%20Test/badge.svg?branch=master)](https://github.com/Cyb3r-Jak3/html5validator-action/actions?query=workflow%3A%22Build%20Test%22)
-[![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Action%20Test/badge.svg?branch=master)](https://github.com/Cyb3r-Jak3/html5validator-action/actions?query=workflow%3A%Action%20Test%22)
+![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Integration/badge.svg)
+
+![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Build%20Test/badge.svg?branch=master)
+![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Action%20Test/badge.svg?branch=master)
 
 This action checks the syntax of your html files in the path that you provide.  
 It used [html5validtor](https://github.com/svenkreiss/html5validator) and a docker image that I build from it found [here](https://github.com/Cyb3r-Jak3/html5validator-docker).
@@ -15,6 +17,18 @@ It used [html5validtor](https://github.com/svenkreiss/html5validator) and a dock
 ### `Extra`
 
 Additional arguments to pass to html5validator.
+
+### `Format`
+
+Format for logging. Supported values: `json, xml, gnu, text`.
+
+### `Log_Level`
+
+Log level to use. Supported values: `DEBUG, INFO, WARNING`. Default: `Warning`.
+
+### `CSS`
+
+If to check css. Supported values: `true, false`. Default: `false`.
 
 ## Outputs
 
@@ -34,5 +48,5 @@ The exit code of the validation.
 Please use the latest version and not master.
 
 ```yaml
- uses: Cyb3r-Jak3/html5validator-action@v0.2
+ uses: Cyb3r-Jak3/html5validator-action@v0.3
  ```

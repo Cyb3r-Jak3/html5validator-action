@@ -13,6 +13,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
   - Log Format.
 - New action that tests integration with Github Actions.
 
+### Changed
+
+- Removed hyperlinks from README
+
 ### Removed
 
 - Build arguments for the docker image.

@@ -4,7 +4,7 @@ set -e
 function main() {
     echo "Running Validator"
 
-    BuildARGS=""
+    BuildARGS=''
 
     if uses "${INPUT_FORMAT}"; then
         BuildARGS+="--format ${INPUT_FORMAT}"
@@ -18,7 +18,7 @@ function main() {
         set -x
     fi
 
-    html5validator --root "${INPUT_ROOT} ${BuildARGS}" --log "${INPUT_LOG_LEVEL}" 
+    html5validator --root "${INPUT_ROOT}" "${BuildARGS}" --log "${INPUT_LOG_LEVEL}" 
     result=$?
 
     echo ::set-output name=result::$result;

@@ -18,7 +18,7 @@ function main() {
         set -x
     fi
 
-    html5validator --root "${INPUT_ROOT}" "${BuildARGS}" --log "${INPUT_LOG_LEVEL}" 
+    html5validator --root "${INPUT_ROOT} ${BuildARGS}" --log "${INPUT_LOG_LEVEL}" 
     result=$?
 
     echo ::set-output name=result::$result;

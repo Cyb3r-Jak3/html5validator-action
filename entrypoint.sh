@@ -4,26 +4,28 @@ set -e
 function main() {
     echo "Running Validator"
 
+    if usesBoolean "${INPUT_ACTION_DEBUG}"; then
+        set -x
+    fi
+
     BuildARGS=''
 
     if uses "${INPUT_FORMAT}"; then
         BuildARGS+="--format ${INPUT_FORMAT}"
     fi
 
+    if usesBoolean "${INPUT_CSS}"; then
+        BuildARGS+=" $INPUT_CSS"
+    fi
+
     if uses "${INPUT_EXTRA}"; then
         BuildARGS+=" ${INPUT_EXTRA}"
     fi
 
-    if usesBoolean "${INPUT_ACTION_DEBUG}"; then
-        set -x
-    fi
-
-    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} > output
+    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS}
     result=$?
-    output=$(cat output)
 
     echo ::set-output name=result::$result;
-    echo ::set-output name=log::$output;
 }
 
 function uses() {

@@ -5,7 +5,7 @@ branding:
   icon: 'award'  
   color: 'green'
 inputs:
-  root:  # id of input
+  root:
     description: 'Path of the files to test'
     required: true
     default: '.'
@@ -24,8 +24,10 @@ inputs:
     required: false
     default: false
 outputs:
-  result: # id of output
+  result:
     description: 'The exit code'
+  log:
+    description: "Any output of the logging."
 runs:
   using: 'docker'
   image: 'Dockerfile'

@@ -18,10 +18,12 @@ function main() {
         set -x
     fi
 
-    html5validator --root ${INPUT_ROOT} --log ${INPUT_LOG_LEVEL} ${BuildARGS}
+    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} > output
     result=$?
+    output=$(cat output)
 
     echo ::set-output name=result::$result;
+    echo ::set-output name=log::$output;
 }
 
 function uses() {

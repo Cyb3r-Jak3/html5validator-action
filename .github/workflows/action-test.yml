@@ -20,5 +20,6 @@ jobs:
         format: json
         log_level: INFO
         extra: -lll
+        action_debug: true
     - name: Get information
       run: echo "Output > ${{ steps.validate.outputs.result }}"

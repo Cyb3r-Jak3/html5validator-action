@@ -10,13 +10,16 @@ function main() {
         BuildARGS+="--format ${INPUT_FORMAT}"
     fi
 
+    if uses "${INPUT_EXTRA}"; then
+        BuildARGS+=" ${INPUT_EXTRA}"
+    fi
 
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then
         set -x
-        echo "html5validator ${INPUT_EXTRA} ${BuildARGS} --log ${INPUT_LOG_LEVEL} --root ${INPUT_ROOT}"
+        echo "html5validator ${BuildARGS} --log ${INPUT_LOG_LEVEL} --root ${INPUT_ROOT}"
     fi
 
-    html5validator "${INPUT_EXTRA} ${BuildARGS}" --log "${INPUT_LOG_LEVEL}" --root "${INPUT_ROOT}"
+    html5validator "${BuildARGS}" --log "${INPUT_LOG_LEVEL}" --root "${INPUT_ROOT}"
     result=$?
 
     echo ::set-output name=result::$result;

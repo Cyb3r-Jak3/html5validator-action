@@ -16,10 +16,9 @@ function main() {
 
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then
         set -x
-        echo "html5validator ${BuildARGS} --log ${INPUT_LOG_LEVEL} --root ${INPUT_ROOT}"
     fi
 
-    html5validator "${BuildARGS}" --log "${INPUT_LOG_LEVEL}" --root "${INPUT_ROOT}"
+    html5validator --root "${INPUT_ROOT}" "${BuildARGS}" --log "${INPUT_LOG_LEVEL}" 
     result=$?
 
     echo ::set-output name=result::$result;

@@ -15,7 +15,7 @@ function main() {
     fi
 
     if usesBoolean "${INPUT_CSS}"; then
-        BuildARGS+=" $INPUT_CSS"
+        BuildARGS+=" --also-check-css"
     fi
 
     if uses "${INPUT_EXTRA}"; then

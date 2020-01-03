@@ -26,4 +26,4 @@ jobs:
     - name: Get information
       run: |
         echo "Bash Exit Code > ${{ steps.validate.outputs.result }}"
-        echo "Log output > ${{ steps.validate.outputs.log }}"
+        echo "${{ steps.validate.outputs.log }}"

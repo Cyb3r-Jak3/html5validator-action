@@ -23,11 +23,10 @@ function main() {
     fi
 
     html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} &> log.log
-    log_output=$(cat log.log)
     result=$?
 
     echo ::set-output name=result::$result;
-    echo ::set-output name=log::$log_output;
+    echo ::set-output name=log::$(cat log.log);
 }
 
 function uses() {

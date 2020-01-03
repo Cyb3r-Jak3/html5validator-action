@@ -27,7 +27,7 @@ function main() {
     result=$?
 
     echo ::set-output name=result::$result;
-    echo ::set-output name=log::"$log_out";
+    echo ::set-output name=log::$log_out;
 }
 
 function uses() {

@@ -26,7 +26,7 @@ function main() {
     result=$?
 
     echo ::set-output name=result::$result;
-    echo ::set-output name=log::$(cat log.log);
+    echo ::set-output name=log::"$(cat log.log)";
 }
 
 function uses() {

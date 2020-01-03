@@ -24,6 +24,4 @@ jobs:
         css: true
         action_debug: true
     - name: Get information
-      run: |
-        echo "Bash Exit Code > ${{ steps.validate.outputs.result }}"
-        echo "${{ steps.validate.outputs.log }}"
+      run: echo "${{ steps.validate.outputs.log }}"

@@ -23,8 +23,9 @@ function main() {
     fi
 
     html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} &> log.log
-    log_out="$(cat log.log)"
     result=$?
+
+    log_out="$(cat log.log)"
 
     echo ::set-output name=result::$result;
     echo ::set-output name=log::$log_out;

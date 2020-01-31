@@ -22,7 +22,7 @@ function main() {
         BuildARGS+=" ${INPUT_EXTRA}"
     fi
 
-    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} --log-file log
+    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} &> log.log
     log_out="$(cat log.log)"
     result=$?
 

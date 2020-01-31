@@ -30,8 +30,6 @@ inputs:
 outputs:
   result:
     description: 'The exit code'
-  log:
-    descriptions: "The log file output."
 runs:
   using: 'docker'
   image: 'Dockerfile'

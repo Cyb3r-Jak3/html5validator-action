@@ -22,7 +22,7 @@ function main() {
         BuildARGS+=" ${INPUT_EXTRA}"
     fi
 
-    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS}
+    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} &> log.log
     result=$?
 
     echo ::set-output name=result::$result;

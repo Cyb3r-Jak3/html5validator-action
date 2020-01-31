@@ -23,5 +23,9 @@ jobs:
         extra: -lll
         css: true
         action_debug: true
+    - uses: actions/upload-artifact@v1
+      with:
+        name: log
+        path: log.log
     - name: Get information
-      run: echo "Bash Exit Code > ${{ steps.validate.outputs.result }}"
+      run: echo "${{ steps.validate.outputs.result }}"

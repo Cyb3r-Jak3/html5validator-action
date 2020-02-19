@@ -3,6 +3,13 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [v0.4] - 2020-02-19
+
+### Added
+
+- Logging feature
+- Weekly action to build
+
 ## [v0.3] - 2019-12-30
 
 ### Added

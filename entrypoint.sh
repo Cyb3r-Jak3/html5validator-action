@@ -22,8 +22,8 @@ function main() {
         BuildARGS+=" ${INPUT_EXTRA}"
     fi
 
-    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} &> log.log
-    result=$?
+    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} |& tee log.log
+    result=${PIPESTATUS[0]}
 
     echo ::set-output name=result::$result;
 }

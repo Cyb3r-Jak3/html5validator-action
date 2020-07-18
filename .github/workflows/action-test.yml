@@ -10,7 +10,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
     - name: Plain Test
       uses: ./
       with:
@@ -26,7 +26,7 @@ jobs:
         extra: -lll
         css: true
         action_debug: true
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v2
       with:
         name: log
         path: log.log

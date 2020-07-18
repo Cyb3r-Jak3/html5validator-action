@@ -3,14 +3,14 @@ name: Integration
 on:
   push:
   schedule:
-    - cron: '0 0 * * 0' # Weekly on Sundays at 02:00
+    - cron: '0 0 * * 0' # Weekly on Sundays at 00:00
 
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
     - name: Tests Integration with Github Actions.
       uses: Cyb3r-Jak3/html5validator-action@master
       with:

@@ -1,7 +1,15 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+## [v0.4.1] - 2020-07-05
+
+### Added
+
+- Issue Templates
+
+### Changed
+
+- Swapped to using tee for better log output.
 
 ## [v0.4] - 2020-02-19
 
@@ -45,3 +53,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ### First working version
 
 - only supports root path.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)

@@ -16,6 +16,15 @@ jobs:
       with:
         root: tests/valid/
         action_debug: true
+    - name: Check Failure
+      uses: ./
+      with:
+        root: tests/invalid/
+        log_level: INFO
+        extra: -lll
+        css: true
+        action_debug: true
+      continue-on-error: true
     - name: Testing Options
       id: validate
       uses: ./

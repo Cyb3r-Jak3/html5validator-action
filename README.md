@@ -57,5 +57,5 @@ There is a log file that is automatically created. To retrieve it you need to us
 Please use the latest version and not master.
 
 ```yaml
- uses: Cyb3r-Jak3/html5validator-action@v0.4
+ uses: Cyb3r-Jak3/html5validator-action@v0.4.1
  ```

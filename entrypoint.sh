@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+set -o pipefail
 
 function main() {
     echo "Running Validator"
@@ -22,8 +23,12 @@ function main() {
         BuildARGS+=" ${INPUT_EXTRA}"
     fi
 
-    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} &> log.log
-    result=$?
+    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} |& tee log.log
+    result=${PIPESTATUS[0]}
+
+    if usesBoolean "${INPUT_ACTION_DEBUG}"; then
+        echo $result
+    fi
 
     echo ::set-output name=result::$result;
 }

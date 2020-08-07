@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-set -o pipefail
 
 function main() {
     echo "Running Validator"

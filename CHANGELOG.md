@@ -5,7 +5,7 @@
 
 ### Changed
 
-- Made it so that the exit code will be set on failure. See #8
+- Made it so that the exit code will be set on failure. See [#8](https://github.com/Cyb3r-Jak3/html5validator-action/pull/8)
 
 ## [v0.4.1] - 2020-07-05
 

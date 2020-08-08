@@ -39,8 +39,7 @@ The exit code of the validation.
 ## Example usage
 
 ```yaml
-    - name: Test Files
-      uses: Cyb3r-Jak3/html5validator-action@master
+      uses: Cyb3r-Jak3/html5validator-action@v0.4.2
       with:
         root: tests/valid/
 ```
@@ -48,14 +47,8 @@ The exit code of the validation.
 There is a log file that is automatically created. To retrieve it you need to use Github's upload artifact action after the validator action.
 
 ```yaml
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v2
       with:
         name: log
         path: log.log
 ```
-
-Please use the latest version and not master.
-
-```yaml
- uses: Cyb3r-Jak3/html5validator-action@v0.4.1
- ```

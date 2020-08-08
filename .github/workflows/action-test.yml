@@ -17,6 +17,7 @@ jobs:
         root: tests/valid/
         action_debug: true
     - name: Check Failure
+      id: invalid
       uses: ./
       with:
         root: tests/invalid/
@@ -26,7 +27,7 @@ jobs:
         action_debug: true
       continue-on-error: true
     - name: Testing Options
-      id: validate
+      id: valid
       uses: ./
       with:
         root: tests/valid/
@@ -40,4 +41,6 @@ jobs:
         name: log
         path: log.log
     - name: Get information
-      run: echo "${{ steps.validate.outputs.result }}"
+      run: |
+          echo "Valid HTML: ${{ steps.valid.outputs.result }}"
+          echo "Invalid HTML: ${{ steps.invalid.outputs.result }}"

@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-set -o pipefail
 
 function main() {
     echo "Running Validator"
@@ -27,10 +26,11 @@ function main() {
     result=${PIPESTATUS[0]}
 
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then
-        echo $result
+        echo "$result"
     fi
 
     echo ::set-output name=result::$result;
+    exit "$result"
 }
 
 function uses() {

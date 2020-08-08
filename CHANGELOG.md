@@ -1,6 +1,12 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
+## [v0.4.2] - 2020-08-08
+
+### Changed
+
+- Made it so that the exit code will be set on failure. See #8
+
 ## [v0.4.1] - 2020-07-05
 
 ### Added

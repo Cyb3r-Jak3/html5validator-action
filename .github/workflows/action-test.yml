@@ -33,7 +33,7 @@ jobs:
         root: tests/valid/
         format: json
         log_level: INFO
-        extra: -lll
+        extra: -lll "Hello World"
         css: true
         action_debug: true
     - uses: actions/upload-artifact@v2

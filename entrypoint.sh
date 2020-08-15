@@ -19,8 +19,7 @@ function main() {
     fi
 
     if uses "${INPUT_EXTRA}"; then
-        BuildARGS+=$((" " + INPUT_EXTRA))
-        #BuildARGS+=${INPUT_EXTRA}
+        BuildARGS+=" "${INPUT_EXTRA}
     fi
 
     html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} |& tee log.log

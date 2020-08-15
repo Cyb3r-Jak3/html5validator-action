@@ -20,7 +20,7 @@ function main() {
 
     if uses "${INPUT_EXTRA}"; then
         BuildARGS+=" "${INPUT_EXTRA}
-        CleanedString=$((echo ${INPUT_EXTRA} | tr -d \'\"))
+        CleanedString=$( ( echo "${INPUT_EXTRA}" | tr -d \' ) )
         echo "$CleanedString"
     fi
 

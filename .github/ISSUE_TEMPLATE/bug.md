@@ -2,7 +2,7 @@
 name: Bug report
 about: Create a report about an issue to help us improve
 title: "[BUG]"
-labels: bug
+labels: unconfirmed
 assignees: Cyb3r-Jak3
 
 ---
@@ -18,7 +18,7 @@ Steps to reproduce the behavior:
 3. Scroll down to '....'
 4. See error
 
-### What is the current *bug* behavior?
+### What is the current *bug* behavior
 
 What actually happens
 

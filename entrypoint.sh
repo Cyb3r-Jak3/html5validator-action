@@ -19,12 +19,12 @@ function main() {
     fi
 
     if uses "${INPUT_EXTRA}"; then
-        BuildARGS+=" "${INPUT_EXTRA}
+        #BuildARGS+=" "${INPUT_EXTRA}
         CleanedString=$( ( echo "${INPUT_EXTRA}" | tr -d \' ) )
         echo "$CleanedString"
     fi
 
-    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} ${INPUT_EXTRA} |& tee log.log
+    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} ${CleanedString} |& tee log.log
     result=${PIPESTATUS[0]}
 
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then

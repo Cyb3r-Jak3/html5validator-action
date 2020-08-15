@@ -22,7 +22,6 @@ jobs:
       with:
         root: tests/invalid/
         log_level: INFO
-        extra: -lll
         css: true
         action_debug: true
       continue-on-error: true
@@ -33,7 +32,7 @@ jobs:
         root: tests/valid/
         format: json
         log_level: INFO
-        extra: -lll "Hello World"
+        extra: -lll  --ignore "Hello World"
         css: true
         action_debug: true
     - uses: actions/upload-artifact@v2

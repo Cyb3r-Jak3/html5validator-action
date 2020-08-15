@@ -22,7 +22,7 @@ function main() {
         BuildARGS+=" ${INPUT_EXTRA}"
     fi
 
-    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} |& tee log.log
+    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" "${BuildARGS}" |& tee log.log
     result=${PIPESTATUS[0]}
 
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then

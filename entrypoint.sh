@@ -23,7 +23,7 @@ function main() {
     #     CleanedString=$( ( echo "${INPUT_EXTRA}" | tr -d \' ) )
     # fi
 
-    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} $( ( echo "${INPUT_EXTRA}" | tr -d \' ) ) |& tee log.log
+    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} "$( ( echo "${INPUT_EXTRA}" | tr -d \' ) )" |& tee log.log
     result=${PIPESTATUS[0]}
 
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then

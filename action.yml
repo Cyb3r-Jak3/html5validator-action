@@ -9,6 +9,9 @@ inputs:
     description: 'Path of the files to test'
     required: true
     default: '.'
+  config:
+    description: "Path of config file"
+    required: false
   extra:
     description: "Extra arguments to test with"
     required: false

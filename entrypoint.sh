@@ -18,12 +18,11 @@ function main() {
         BuildARGS+=" --also-check-css"
     fi
 
-    # if uses "${INPUT_EXTRA}"; then
-    #     #BuildARGS+=" "${INPUT_EXTRA}
-    #     CleanedString=$( ( echo "${INPUT_EXTRA}" | tr -d \' ) )
-    # fi
-
-    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} "$( ( echo "${INPUT_EXTRA}" | tr -d \' ) )" |& tee log.log
+    if uses "${INPUT_CONFIG}"; then
+        html5validator --config "${INPUT_CONFIG}" |& tee log.log
+    else
+        html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} "${INPUT_EXTRA}" |& tee log.log
+    fi
     result=${PIPESTATUS[0]}
 
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then

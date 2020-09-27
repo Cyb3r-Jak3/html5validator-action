@@ -32,7 +32,7 @@ jobs:
         root: tests/valid/
         format: json
         log_level: INFO
-        extra: -lll  --ignore "Hello World"
+        extra: -lll
         css: true
         action_debug: true
     - name: Test config

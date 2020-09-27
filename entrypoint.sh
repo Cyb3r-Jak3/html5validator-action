@@ -6,6 +6,7 @@ function main() {
 
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then
         set -x
+        echo "${INPUT_CONFIG}"
     fi
 
     BuildARGS=''
@@ -19,8 +20,10 @@ function main() {
     fi
 
     if uses "${INPUT_CONFIG}"; then
+        echo "Using Config File"
         html5validator --config "${INPUT_CONFIG}" |& tee log.log
     else
+    echo "Not using Config File"
         html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} "${INPUT_EXTRA}" |& tee log.log
     fi
     result=${PIPESTATUS[0]}

@@ -4,11 +4,10 @@ set -e
 function main() {
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then
         set -x
-        echo uses "${INPUT_ROOT}"
-        echo uses "${INPUT_CONFIG}"
     fi
     if ! uses "${INPUT_ROOT}" && ! uses "${INPUT_CONFIG}"; then
         echo "Need either root or config file"
+        echo ::set-output name=result::"failed"
         exit 1
     fi
     echo "Running Validator"

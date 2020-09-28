@@ -61,4 +61,4 @@ jobs:
         name: log
         path: log.log
     - name: Check outputs
-      run: ./output_check.sh
+      run: bash output_check.sh

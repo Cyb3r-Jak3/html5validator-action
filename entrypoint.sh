@@ -5,7 +5,7 @@ function main() {
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then
         set -x
     fi
-    if not uses "${INPUT_ROOT}" && not uses "${INPUT_CONFIG}"; then
+    if ! uses "${INPUT_ROOT}" && ! uses "${INPUT_CONFIG}"; then
         echo "Need either root or config file"
         exit 1
     fi

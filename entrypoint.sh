@@ -26,7 +26,7 @@ function main() {
         html5validator --config "${INPUT_CONFIG}" |& tee log.log
         result=${PIPESTATUS[0]}
     else
-        html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} "${INPUT_EXTRA}" |& tee log.log
+        html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} ${INPUT_EXTRA} |& tee log.log
         result=${PIPESTATUS[0]}
     fi
 

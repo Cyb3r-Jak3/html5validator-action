@@ -38,6 +38,7 @@ jobs:
         action_debug: true
 
     - name: Check Failure
+      if: invalid
       uses: ./
       with:
         root: tests/invalid/
@@ -47,7 +48,7 @@ jobs:
       continue-on-error: true
 
     - name: Check Empty
-      id: invalid
+      id: empty
       uses: ./
       with:
         log_level: INFO
@@ -59,8 +60,9 @@ jobs:
       with:
         name: log
         path: log.log
-    - name: Get information
+    - name: Check outputs
       run: |
-          echo "Valid HTML: ${{ steps.valid.outputs.result }}"
-          echo "Config File: ${{ steps.config.outputs.result }}"
-          echo "Invalid HTML: ${{ steps.invalid.outputs.result }}"
+          if ${{ steps.valid.outputs.result }} -ne 0; then echo "Valid step failed";fi
+          if ${{ steps.config.outputs.result }} -ne 0; then echo "Config step failed"; fi
+          if ${{ steps.invalid.outputs.result }} -ne 1; then echo "Invalid Test failed"; fi
+          if ${{ steps.empty.outputs.result }} -ne "no config file or root path given"; then echo "Empty check failed"; fi

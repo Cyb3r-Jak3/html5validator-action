@@ -3,7 +3,7 @@ if [[ "$VALID_OUT" -ne 0 ]]; then
     echo "Valid step failed"
     exit 1
 fi
-if [[ "$INVALID_OUT" -ne "1" ]]; then 
+if [[ "$INVALID_OUT" -ne 2 ]]; then 
     echo "Invalid Test failed"
     exit 1;
 fi

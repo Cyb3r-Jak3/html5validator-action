@@ -38,7 +38,7 @@ jobs:
         action_debug: true
 
     - name: Check Failure
-      if: invalid
+      id: invalid
       uses: ./
       with:
         root: tests/invalid/

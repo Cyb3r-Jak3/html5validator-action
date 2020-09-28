@@ -1,1 +1,2 @@
-root: tests/valid/
+root: tests/invalid/
+log: DEBUG

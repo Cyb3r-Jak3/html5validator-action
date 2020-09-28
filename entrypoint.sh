@@ -2,12 +2,14 @@
 set -e
 
 function main() {
-    echo "Running Validator"
-
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then
         set -x
-        echo "${INPUT_CONFIG}"
     fi
+    if not uses "${INPUT_ROOT}" && not uses "${INPUT_CONFIG}"; then
+        echo "Need either root or config file"
+        exit 1
+    fi
+    echo "Running Validator"
 
     BuildARGS=''
 
@@ -20,13 +22,12 @@ function main() {
     fi
 
     if uses "${INPUT_CONFIG}"; then
-        echo "Using Config File"
         html5validator --config "${INPUT_CONFIG}" |& tee log.log
+        result=${PIPESTATUS[0]}
     else
-    echo "Not using Config File"
         html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} "${INPUT_EXTRA}" |& tee log.log
+        result=${PIPESTATUS[0]}
     fi
-    result=${PIPESTATUS[0]}
 
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then
         echo "$result"

@@ -11,20 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
     - name: Plain Test
       uses: ./
       with:
         root: tests/valid/
         action_debug: true
-    - name: Check Failure
-      id: invalid
-      uses: ./
-      with:
-        root: tests/invalid/
-        log_level: INFO
-        css: true
-        action_debug: true
-      continue-on-error: true
+
     - name: Testing Options
       id: valid
       uses: ./
@@ -35,12 +28,33 @@ jobs:
         extra: -lll
         css: true
         action_debug: true
+
     - name: Test config
       uses: ./
       with:
         root: empty
         config: tests/example_config.yaml
         action_debug: true
+
+    - name: Check Failure
+      id: invalid
+      uses: ./
+      with:
+        root: tests/invalid/
+        log_level: INFO
+        css: true
+        action_debug: true
+      continue-on-error: true
+
+    - name: Check Empty
+      id: invalid
+      uses: ./
+      with:
+        log_level: INFO
+        css: true
+        action_debug: true
+      continue-on-error: true
+
     - uses: actions/upload-artifact@v2
       with:
         name: log

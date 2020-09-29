@@ -7,8 +7,10 @@ branding:
 inputs:
   root:
     description: 'Path of the files to test'
-    required: true
-    default: '.'
+    required: false
+  config:
+    description: "Path of config file"
+    required: false
   extra:
     description: "Extra arguments to test with"
     required: false

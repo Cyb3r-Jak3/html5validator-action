@@ -2,11 +2,15 @@
 set -e
 
 function main() {
-    echo "Running Validator"
-
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then
         set -x
     fi
+    if ! uses "${INPUT_ROOT}" && ! uses "${INPUT_CONFIG}"; then
+        echo "Need either root or config file"
+        echo ::set-output name=result::"no config file or root path given"
+        exit 1
+    fi
+    echo "Running Validator"
 
     BuildARGS=''
 
@@ -18,12 +22,13 @@ function main() {
         BuildARGS+=" --also-check-css"
     fi
 
-    if uses "${INPUT_EXTRA}"; then
-        BuildARGS+=" ${INPUT_EXTRA}"
+    if uses "${INPUT_CONFIG}"; then
+        html5validator --config "${INPUT_CONFIG}" |& tee log.log
+        result=${PIPESTATUS[0]}
+    else
+        html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} ${INPUT_EXTRA} |& tee log.log
+        result=${PIPESTATUS[0]}
     fi
-
-    html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} |& tee log.log
-    result=${PIPESTATUS[0]}
 
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then
         echo "$result"

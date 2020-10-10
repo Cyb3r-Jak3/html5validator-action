@@ -4,7 +4,7 @@
 ![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Action%20Test/badge.svg?branch=master)
 
 This action checks the syntax of your html files in the path that you provide.  
-It used [html5validtor](https://github.com/svenkreiss/html5validator) and a docker image that I build from it found [here](https://github.com/Cyb3r-Jak3/html5validator-docker).
+It used [html5validator](https://github.com/svenkreiss/html5validator) and a docker image that I build from it found [here](https://github.com/Cyb3r-Jak3/html5validator-docker).
 
 For a help getting started check out the [wiki](https://github.com/Cyb3r-Jak3/html5validator-action/wiki/Getting-Started).
 
@@ -12,7 +12,11 @@ For a help getting started check out the [wiki](https://github.com/Cyb3r-Jak3/ht
 
 ### `Root`
 
-**Required** The root path of the files you want to check. Default `"."`.
+The root path of the files you want to check.
+
+### `Config`
+
+The path to the config file.
 
 ### `Extra`
 

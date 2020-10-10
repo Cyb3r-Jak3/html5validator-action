@@ -1,6 +1,16 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
+## [v0.4.3] - UNRELEASED
+
+### Add
+
+- Ability to use config files. Fixed #10
+
+### Changed
+
+- Made it so the default image is alpine based so smaller.
+
 ## [v0.4.2] - 2020-08-08
 
 ### Changed

@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
-## [v0.4.3] - UNRELEASED
+## [v0.4.3] - 2020-10-10
 
 ### Add
 

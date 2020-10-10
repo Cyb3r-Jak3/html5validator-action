@@ -1,6 +1,6 @@
 FROM cyb3rjak3/html5validator:source-alpine
 
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x entrypoint.sh
+RUN apk add --update bash && rm -rf /var/cache/apk/*
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash","/entrypoint.sh"]

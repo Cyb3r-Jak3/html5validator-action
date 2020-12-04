@@ -23,12 +23,10 @@ inputs:
     default: "WARNING"
   css:
     description: "Checks css as well"
-    require: false
-    default: false
+    required: false
   action_debug:
     description: "Flag that increase verbose output only used for troubleshooting the action."
     required: false
-    default: false
 outputs:
   result:
     description: 'The exit code'

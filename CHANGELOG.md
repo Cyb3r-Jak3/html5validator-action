@@ -1,6 +1,12 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
+## [v0.4.4] - 2020-12-05
+
+### Changed
+
+- Swapped to using the image from GitHub's Container registry
+
 ## [v0.4.3] - 2020-10-10
 
 ### Add

@@ -60,6 +60,7 @@ jobs:
       with:
         name: log
         path: log.log
+
     - name: Check outputs
       run: bash output_check.sh
       env:

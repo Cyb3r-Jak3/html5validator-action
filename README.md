@@ -35,7 +35,29 @@ If to check css. Supported values: `true, false`. Default: `false`.
 
 ### `Ignore`
 
-Path to files or directories to ignore
+Names of files or directories to ignore.
+**This is not full paths**
+
+Example:
+This will work
+
+```yaml
+    - name: HTML5Validator
+      uses: Cyb3r-Jak3/html5validator-action
+      with:
+        root: tests/
+        ignore: invalid
+```
+
+This will not
+
+```yaml
+    - name: HTML5Validator
+      uses: Cyb3r-Jak3/html5validator-action
+      with:
+        root: tests/
+        ignore: tests/invalid
+```
 
 ## Outputs
 
@@ -46,7 +68,7 @@ The exit code of the validation.
 ## Example usage
 
 ```yaml
-      uses: Cyb3r-Jak3/html5validator-action@v0.4.4
+      uses: Cyb3r-Jak3/html5validator-action@v0.5
       with:
         root: tests/valid/
 ```

@@ -1,7 +1,6 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
-
 ## [v0.5] - 2021-03-27
 
 - Adds ignore option to ignore files and directories

@@ -33,6 +33,10 @@ Log level to use. Supported values: `DEBUG, INFO, WARNING`. Default: `Warning`.
 
 If to check css. Supported values: `true, false`. Default: `false`.
 
+### `Ignore`
+
+Path to files or directories to ignore
+
 ## Outputs
 
 ### `result`

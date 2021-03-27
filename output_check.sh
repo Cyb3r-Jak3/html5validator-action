@@ -11,6 +11,10 @@ if [[ "$CONFIG_OUT" -ne 0 ]]; then
     echo "Config step failed"
     exit 1
 fi
+if [[ "$IGNORE_OUT" -ne 0 ]]; then 
+    echo "Ignore step failed"
+    exit 1
+fi
 if [[ "$EMPTY_OUT" != "no config file or root path given" ]]; then
  echo "Empty check failed"
  exit 1; 

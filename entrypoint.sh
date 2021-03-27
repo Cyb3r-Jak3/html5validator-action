@@ -18,6 +18,10 @@ function main() {
         BuildARGS+="--format ${INPUT_FORMAT}"
     fi
 
+    if uses "${INPUT_IGNORE}"; then
+        BuildARGS+=" --blacklist ${INPUT_IGNORE}"
+    fi
+
     if usesBoolean "${INPUT_CSS}"; then
         BuildARGS+=" --also-check-css"
     fi

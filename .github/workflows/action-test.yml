@@ -41,7 +41,7 @@ jobs:
       uses: ./
       with:
         root: tests/
-        ignore: test/invalid
+        ignore: tests/invalid
         action_debug: true
 
     - name: Check Failure

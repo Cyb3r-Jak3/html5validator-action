@@ -42,7 +42,7 @@ jobs:
       with:
         root: tests/
         ignore: test/invalid
-        action_debug: tru
+        action_debug: true
 
     - name: Check Failure
       id: invalid

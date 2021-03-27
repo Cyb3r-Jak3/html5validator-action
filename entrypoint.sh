@@ -5,7 +5,9 @@ function main() {
     if usesBoolean "${INPUT_ACTION_DEBUG}"; then
         set -x
         INPUT_LOG_LEVEL=DEBUG
+        html5validator --version
     fi
+
     if ! uses "${INPUT_ROOT}" && ! uses "${INPUT_CONFIG}"; then
         echo "Need either root or config file"
         echo ::set-output name=result::"no config file or root path given"

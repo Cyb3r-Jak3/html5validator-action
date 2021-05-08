@@ -1,6 +1,10 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
+## [v0.6] - 2021-05-7
+
+- Map action input names to html5validator inputs
+
 ## [v0.5] - 2021-03-27
 
 - Adds ignore option to ignore files and directories

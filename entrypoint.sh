@@ -21,7 +21,7 @@ function main() {
         BuildARGS+="--format ${INPUT_FORMAT}"
     fi
 
-    if uses "${INPUT_IGNORE}"; then
+    if uses "${INPUT_BLACKLIST}"; then
         BuildARGS+=" --blacklist ${INPUT_IGNORE}"
     fi
 

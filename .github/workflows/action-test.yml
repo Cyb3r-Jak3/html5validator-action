@@ -36,12 +36,12 @@ jobs:
         config: tests/example_config.yaml
         action_debug: true
 
-    - name: Check Ignore
-      id: ignore
+    - name: Check Blacklist
+      id: blacklist
       uses: ./
       with:
         root: tests/
-        ignore: invalid
+        blacklist: invalid
         action_debug: true
 
     - name: Check Failure
@@ -74,5 +74,5 @@ jobs:
         VALID_OUT: ${{ steps.valid.outputs.result }}
         INVALID_OUT: ${{ steps.invalid.outputs.result }}
         CONFIG_OUT: ${{ steps.config.outputs.result }}
-        IGNORE_OUT: ${{ steps.ignore.outputs.result }}
+        BLACKLIST_OUT: ${{ steps.blacklist.outputs.result }}
         EMPTY_OUT: ${{ steps.empty.outputs.result }}

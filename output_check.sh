@@ -11,7 +11,7 @@ if [[ "$CONFIG_OUT" -ne 0 ]]; then
     echo "Config step failed"
     exit 1
 fi
-if [[ "$IGNORE_OUT" -ne 0 ]]; then 
+if [[ "$BLACKLIST_OUT" -ne 0 ]]; then 
     echo "Ignore step failed"
     exit 1
 fi

@@ -24,7 +24,7 @@ inputs:
   css:
     description: "Checks css as well"
     required: false
-  ignore:
+  blacklist:
     description: "Files or directories to ignore in checking"
     required: false
   action_debug:

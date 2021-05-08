@@ -22,7 +22,7 @@ function main() {
     fi
 
     if uses "${INPUT_BLACKLIST}"; then
-        BuildARGS+=" --blacklist ${INPUT_IGNORE}"
+        BuildARGS+=" --blacklist ${INPUT_BLACKLIST}"
     fi
 
     if usesBoolean "${INPUT_CSS}"; then

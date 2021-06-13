@@ -35,7 +35,7 @@ If to check css. Supported values: `true, false`. Default: `false`.
 
 ### `Blacklist`
 
-Names of files or directories to ignore.
+Names of files or directories to blacklist.
 **This is not full paths**
 
 Example:
@@ -46,7 +46,7 @@ This will work
       uses: Cyb3r-Jak3/html5validator-action
       with:
         root: tests/
-        ignore: invalid
+        blacklist: invalid
 ```
 
 This will not
@@ -56,7 +56,7 @@ This will not
       uses: Cyb3r-Jak3/html5validator-action
       with:
         root: tests/
-        ignore: tests/invalid
+        blacklist: tests/invalid
 ```
 
 ## Outputs

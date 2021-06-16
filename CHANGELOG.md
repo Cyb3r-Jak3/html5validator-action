@@ -1,7 +1,11 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
-## [v0.6] - 2021-05-7
+## [v0.6.1] - 2021-06-16
+
+- Corrected README for previous changes
+
+## [v0.6] - 2021-05-07
 
 - Map action input names to html5validator inputs
 

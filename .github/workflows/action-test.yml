@@ -69,7 +69,7 @@ jobs:
         path: log.log
 
     - name: Check outputs
-      run: bash output_check.sh
+      run: bash ./tests/output_check.sh
       env:
         VALID_OUT: ${{ steps.valid.outputs.result }}
         INVALID_OUT: ${{ steps.invalid.outputs.result }}

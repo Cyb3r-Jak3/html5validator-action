@@ -16,7 +16,8 @@ jobs:
       uses: ./
       with:
         root: tests/valid/
-        action_debug: true
+      env:
+        HTML5_DEBUG: true
 
     - name: Testing Options
       id: valid
@@ -27,14 +28,16 @@ jobs:
         log_level: INFO
         extra: -lll
         css: true
-        action_debug: true
+      env:
+        HTML5_DEBUG: true
 
     - name: Test config
       id: config
       uses: ./
       with:
         config: tests/example_config.yaml
-        action_debug: true
+      env:
+        HTML5_DEBUG: true
 
     - name: Check Blacklist
       id: blacklist
@@ -42,7 +45,8 @@ jobs:
       with:
         root: tests/
         blacklist: invalid
-        action_debug: true
+      env:
+        HTML5_DEBUG: true
 
     - name: Check Failure
       id: invalid
@@ -51,7 +55,8 @@ jobs:
         root: tests/invalid/
         log_level: INFO
         css: true
-        action_debug: true
+      env:
+        HTML5_DEBUG: true
       continue-on-error: true
 
     - name: Check Empty
@@ -60,7 +65,8 @@ jobs:
       with:
         log_level: INFO
         css: true
-        action_debug: true
+      env:
+        HTML5_DEBUG: true
       continue-on-error: true
 
     - uses: actions/upload-artifact@v2

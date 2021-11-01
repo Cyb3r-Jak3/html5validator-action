@@ -2,9 +2,10 @@
 set -e
 
 function main() {
-    if usesBoolean "${INPUT_ACTION_DEBUG}"; then
+    if usesBoolean "${INPUT_ACTION_DEBUG}" || usesBoolean "${HTML5_DEBUG}"; then
         set -x
         INPUT_LOG_LEVEL=DEBUG
+        python --version
         html5validator --version
     fi
 

@@ -5,7 +5,6 @@ on:
     paths:
       - ".github/workflows/build.yml"
       - "entrypoint.sh"
-      - "output_check.sh"
       - "Dockerfile"
   schedule:
     - cron: '0 0 * * 0' # Weekly on Sundays at 00:00

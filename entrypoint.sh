@@ -16,9 +16,7 @@ function main() {
     fi
     echo "Running Validator"
 
-    git -C . rev-parse 2>/dev/null
-
-    if $? != 0; then
+    if git -C . rev-parse 2>/dev/null != 0; then
         echo "There is no git respository detected"
         exit 1
     fi

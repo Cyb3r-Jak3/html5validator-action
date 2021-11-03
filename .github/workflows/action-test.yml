@@ -2,6 +2,11 @@ name: Action Test
 
 on:
   push:
+    paths:
+      - ".github/workflows/action-test.yml"
+      - "tests/**"
+      - "Dockerfile"
+      - "entrypoint.sh"
   schedule:
     - cron: '0 0 * * 0' # Weekly on Sundays at 00:00
 
@@ -10,13 +15,23 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+
+    - name: No checkout test
+      uses: Cyb3r-Jak3/html5validator-action@debug
+      with:
+        root: tests/valid/
+      continue-on-error: true
+      env:
+        HTML5_ACTION_DEBUG: true
+
     - uses: actions/checkout@v2
 
     - name: Plain Test
       uses: ./
       with:
         root: tests/valid/
-        action_debug: true
+      env:
+        HTML5_ACTION_DEBUG: true
 
     - name: Testing Options
       id: valid
@@ -27,14 +42,16 @@ jobs:
         log_level: INFO
         extra: -lll
         css: true
-        action_debug: true
+      env:
+        HTML5_ACTION_DEBUG: true
 
     - name: Test config
       id: config
       uses: ./
       with:
         config: tests/example_config.yaml
-        action_debug: true
+      env:
+        HTML5_ACTION_DEBUG: true
 
     - name: Check Blacklist
       id: blacklist
@@ -42,7 +59,8 @@ jobs:
       with:
         root: tests/
         blacklist: invalid
-        action_debug: true
+      env:
+        HTML5_ACTION_DEBUG: true
 
     - name: Check Failure
       id: invalid
@@ -51,7 +69,8 @@ jobs:
         root: tests/invalid/
         log_level: INFO
         css: true
-        action_debug: true
+      env:
+        HTML5_ACTION_DEBUG: true
       continue-on-error: true
 
     - name: Check Empty
@@ -60,7 +79,8 @@ jobs:
       with:
         log_level: INFO
         css: true
-        action_debug: true
+      env:
+        HTML5_ACTION_DEBUG: true
       continue-on-error: true
 
     - uses: actions/upload-artifact@v2

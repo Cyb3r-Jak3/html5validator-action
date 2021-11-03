@@ -2,18 +2,25 @@
 set -e
 
 function main() {
-    if usesBoolean "${INPUT_ACTION_DEBUG}"; then
+    if usesBoolean "${HTML5_ACTION_DEBUG}"; then
         set -x
         INPUT_LOG_LEVEL=DEBUG
+        python --version
         html5validator --version
     fi
 
     if ! uses "${INPUT_ROOT}" && ! uses "${INPUT_CONFIG}"; then
-        echo "Need either root or config file"
+        echo ::error::"Need either root or config file"
         echo ::set-output name=result::"no config file or root path given"
         exit 1
     fi
     echo "Running Validator"
+
+    if ! git -C . rev-parse 2>/dev/null; then
+        echo ::set-output name=result::"There is no git respository detected"
+        echo ::error::"There is no git respository detected"
+        exit 1
+    fi
 
     BuildARGS=''
 
@@ -33,6 +40,11 @@ function main() {
         html5validator --config "${INPUT_CONFIG}" |& tee log.log
         result=${PIPESTATUS[0]}
     else
+        if [ "${INPUT_ROOT}" == "" ]; then
+            echo ::set-output name=result::"There is no root given"
+            echo ::error::"There is no root given"
+            exit 1
+        fi
         html5validator --root "${INPUT_ROOT}" --log "${INPUT_LOG_LEVEL}" ${BuildARGS} ${INPUT_EXTRA} |& tee log.log
         result=${PIPESTATUS[0]}
     fi

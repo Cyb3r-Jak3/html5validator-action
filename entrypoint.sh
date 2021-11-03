@@ -10,7 +10,7 @@ function main() {
     fi
 
     if ! uses "${INPUT_ROOT}" && ! uses "${INPUT_CONFIG}"; then
-        echo "Need either root or config file"
+        echo ::error::"Need either root or config file"
         echo ::set-output name=result::"no config file or root path given"
         exit 1
     fi

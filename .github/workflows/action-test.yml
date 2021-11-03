@@ -17,7 +17,7 @@ jobs:
     steps:
 
     - name: No checkout test
-      uses: ./
+      uses: Cyb3r-Jak3/html5validator-action@debug
       with:
         root: tests/valid/
       continue-on-error: true

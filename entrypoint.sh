@@ -2,7 +2,7 @@
 set -e
 
 function main() {
-    if usesBoolean "${INPUT_ACTION_DEBUG}" || usesBoolean "${HTML5_ACTION_DEBUG}"; then
+    if usesBoolean "${HTML5_ACTION_DEBUG}"; then
         set -x
         INPUT_LOG_LEVEL=DEBUG
         python --version

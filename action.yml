@@ -27,9 +27,6 @@ inputs:
   blacklist:
     description: "Files or directories to ignore in checking"
     required: false
-  action_debug:
-    description: "Flag that increase verbose output only used for troubleshooting the action."
-    required: false
 outputs:
   result:
     description: 'The exit code'

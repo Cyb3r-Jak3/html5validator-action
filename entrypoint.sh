@@ -2,7 +2,7 @@
 set -e
 
 function main() {
-    if usesBoolean "${INPUT_ACTION_DEBUG}" || usesBoolean "${HTML5_DEBUG}"; then
+    if usesBoolean "${INPUT_ACTION_DEBUG}" || usesBoolean "${HTML5_ACTION_DEBUG}"; then
         set -x
         INPUT_LOG_LEVEL=DEBUG
         python --version
@@ -15,6 +15,13 @@ function main() {
         exit 1
     fi
     echo "Running Validator"
+
+    git -C . rev-parse 2>/dev/null
+
+    if $? != 0; then
+        echo "There is no git respository detected"
+        exit 1
+    fi
 
     BuildARGS=''
 

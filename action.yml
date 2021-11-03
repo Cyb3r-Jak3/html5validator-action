@@ -8,6 +8,7 @@ inputs:
   root:
     description: 'Path of the files to test'
     required: false
+    default: './'
   config:
     description: "Path of config file"
     required: false

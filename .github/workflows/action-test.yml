@@ -12,7 +12,7 @@ on:
 
 
 jobs:
-  test:
+  Test:
     runs-on: ubuntu-latest
     env:
       HTML5_ACTION_DEBUG: true

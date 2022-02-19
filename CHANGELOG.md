@@ -1,6 +1,12 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
+## [Not Released]
+
+### Adds
+
+* Ability to skip the git checkout check
+
 ## [v0.7.0] - 2021-11-03
 
 ### Adds

@@ -14,6 +14,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      HTML5_ACTION_DEBUG: true
     steps:
 
       # Need to manually change branch when making changes
@@ -22,8 +24,6 @@ jobs:
       with:
         root: tests/valid/
       continue-on-error: true
-      env:
-        HTML5_ACTION_DEBUG: true
 
       # Need to manually change branch when making changes
     - name: No checkout test. Passes at Git Check
@@ -32,8 +32,6 @@ jobs:
         root: tests/valid/
         skip_git: true
       continue-on-error: true
-      env:
-        HTML5_ACTION_DEBUG: true
 
     - uses: actions/checkout@v2
 
@@ -41,8 +39,6 @@ jobs:
       uses: ./
       with:
         root: tests/valid/
-      env:
-        HTML5_ACTION_DEBUG: true
 
     - name: Testing Options
       id: valid
@@ -53,16 +49,12 @@ jobs:
         log_level: INFO
         extra: -lll
         css: true
-      env:
-        HTML5_ACTION_DEBUG: true
 
     - name: Test config
       id: config
       uses: ./
       with:
         config: tests/example_config.yaml
-      env:
-        HTML5_ACTION_DEBUG: true
 
     - name: Check Blacklist
       id: blacklist
@@ -70,8 +62,6 @@ jobs:
       with:
         root: tests/
         blacklist: invalid
-      env:
-        HTML5_ACTION_DEBUG: true
 
     - name: Check Failure
       id: invalid
@@ -80,8 +70,6 @@ jobs:
         root: tests/invalid/
         log_level: INFO
         css: true
-      env:
-        HTML5_ACTION_DEBUG: true
       continue-on-error: true
 
     - name: Check Empty
@@ -90,8 +78,6 @@ jobs:
       with:
         log_level: INFO
         css: true
-      env:
-        HTML5_ACTION_DEBUG: true
       continue-on-error: true
 
     - uses: actions/upload-artifact@v2

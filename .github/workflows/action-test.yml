@@ -30,7 +30,7 @@ jobs:
       uses: Cyb3r-Jak3/html5validator-action@allow_git_check_skipping
       with:
         root: tests/valid/
-        skip_git: true
+        skip_git_check: true
       continue-on-error: true
 
     - uses: actions/checkout@v2

@@ -16,10 +16,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: No checkout test
-      uses: Cyb3r-Jak3/html5validator-action@master
+    - name: No checkout test. Fail at Git Check
+      uses: Cyb3r-Jak3/html5validator-action@allow_git_check_skipping
       with:
         root: tests/valid/
+      continue-on-error: true
+      env:
+        HTML5_ACTION_DEBUG: true
+
+    - name: No checkout test. Passes at Git Check
+      uses: Cyb3r-Jak3/html5validator-action@allow_git_check_skipping
+      with:
+        root: tests/valid/
+        skip_git: true
       continue-on-error: true
       env:
         HTML5_ACTION_DEBUG: true

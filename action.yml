@@ -27,6 +27,10 @@ inputs:
   blacklist:
     description: "Files or directories to ignore in checking"
     required: false
+  skip_git:
+    description: "Skip checking that code has been checked out"
+    required: false
+    default: false
 outputs:
   result:
     description: 'The exit code'

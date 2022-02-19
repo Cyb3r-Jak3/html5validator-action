@@ -16,7 +16,7 @@ function main() {
     fi
     echo "Running Validator"
 
-    if ! git -C . rev-parse 2>/dev/null; then
+    if ! git -C . rev-parse 2>/dev/null && ! usesBoolean "${INPUT_SKIP_GIT_CHECK}"; then
         echo ::set-output name=result::"There is no git respository detected"
         echo ::error::"There is no git respository detected"
         exit 1

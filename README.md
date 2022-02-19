@@ -9,35 +9,17 @@ For help getting started, check out the [wiki](https://github.com/Cyb3r-Jak3/htm
 
 ## Inputs
 
-### `root`
+| Flag             | Description                                                                   | Default   |
+|------------------|-------------------------------------------------------------------------------|-----------|
+| `root`           | The root path of the files you want to check                                  |           |
+| `config`         | Path to config file to use.                                                   |           |
+| `format`         | The format for logging. Supported values: `json, xml, gnu, text`.             |           |
+| `log_level`      | The log level to use. Supported values: `DEBUG, INFO, WARNING`.               | `WARNING` |
+| `css`            | Enable to check css. Supported values: `true, false`                          | `false`   |
+| `blacklist`*     | The names of files or directories to blacklist. **These are not full paths.** |           |
+| `skip_git_check` | Skip checking that the repo has been checked out                              |           |
 
-The root path of the files you want to check.
-
-### `config`
-
-The path to the config file.
-
-### `extra`
-
-Additional arguments to pass to html5validator.
-
-### `format`
-
-The format for logging. Supported values: `json, xml, gnu, text`.
-
-### `log_level`
-
-The log level to use. Supported values: `DEBUG, INFO, WARNING`. Default: `WARNING`.
-
-### `css`
-
-Enable to check css. Supported values: `true, false`. Default: `false`.
-
-### `blacklist`
-
-The names of files or directories to blacklist.
-
-**These are not full paths.**
+* Examples of `blacklist`
 
 Correct Example:
 

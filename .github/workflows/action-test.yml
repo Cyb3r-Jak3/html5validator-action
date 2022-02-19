@@ -12,17 +12,26 @@ on:
 
 
 jobs:
-  test:
+  Test:
     runs-on: ubuntu-latest
+    env:
+      HTML5_ACTION_DEBUG: true
     steps:
 
-    - name: No checkout test
-      uses: Cyb3r-Jak3/html5validator-action@master
+      # Need to manually change branch when making changes
+    - name: No checkout test. Fail at Git Check
+      uses: Cyb3r-Jak3/html5validator-action@allow_git_check_skipping
       with:
         root: tests/valid/
       continue-on-error: true
-      env:
-        HTML5_ACTION_DEBUG: true
+
+      # Need to manually change branch when making changes
+    - name: No checkout test. Passes at Git Check
+      uses: Cyb3r-Jak3/html5validator-action@allow_git_check_skipping
+      with:
+        root: tests/valid/
+        skip_git_check: true
+      continue-on-error: true
 
     - uses: actions/checkout@v2
 
@@ -30,8 +39,6 @@ jobs:
       uses: ./
       with:
         root: tests/valid/
-      env:
-        HTML5_ACTION_DEBUG: true
 
     - name: Testing Options
       id: valid
@@ -42,16 +49,12 @@ jobs:
         log_level: INFO
         extra: -lll
         css: true
-      env:
-        HTML5_ACTION_DEBUG: true
 
     - name: Test config
       id: config
       uses: ./
       with:
         config: tests/example_config.yaml
-      env:
-        HTML5_ACTION_DEBUG: true
 
     - name: Check Blacklist
       id: blacklist
@@ -59,8 +62,6 @@ jobs:
       with:
         root: tests/
         blacklist: invalid
-      env:
-        HTML5_ACTION_DEBUG: true
 
     - name: Check Failure
       id: invalid
@@ -69,8 +70,6 @@ jobs:
         root: tests/invalid/
         log_level: INFO
         css: true
-      env:
-        HTML5_ACTION_DEBUG: true
       continue-on-error: true
 
     - name: Check Empty
@@ -79,8 +78,6 @@ jobs:
       with:
         log_level: INFO
         css: true
-      env:
-        HTML5_ACTION_DEBUG: true
       continue-on-error: true
 
     - uses: actions/upload-artifact@v2

@@ -2,44 +2,44 @@
 
 ![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Action%20Test/badge.svg?branch=master) ![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Integration/badge.svg) ![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Build%20Test/badge.svg?branch=master)
 
-This action checks the syntax of your html files in the path that you provide.  
-It used [html5validator](https://github.com/svenkreiss/html5validator) and a docker image that I build from it found [here](https://github.com/Cyb3r-Jak3/html5validator-docker).
+This action checks the syntax of your html files in the path you specify.  
+It used [html5validator](https://github.com/svenkreiss/html5validator) and a [docker image that I build from it](https://github.com/Cyb3r-Jak3/html5validator-docker).
 
-For a help getting started check out the [wiki](https://github.com/Cyb3r-Jak3/html5validator-action/wiki/Getting-Started).
+For help getting started, check out the [wiki](https://github.com/Cyb3r-Jak3/html5validator-action/wiki/Getting-Started).
 
 ## Inputs
 
-### `Root`
+### `root`
 
 The root path of the files you want to check.
 
-### `Config`
+### `config`
 
 The path to the config file.
 
-### `Extra`
+### `extra`
 
 Additional arguments to pass to html5validator.
 
-### `Format`
+### `format`
 
-Format for logging. Supported values: `json, xml, gnu, text`.
+The format for logging. Supported values: `json, xml, gnu, text`.
 
-### `Log_Level`
+### `log_level`
 
-Log level to use. Supported values: `DEBUG, INFO, WARNING`. Default: `Warning`.
+The log level to use. Supported values: `DEBUG, INFO, WARNING`. Default: `WARNING`.
 
-### `CSS`
+### `css`
 
-If to check css. Supported values: `true, false`. Default: `false`.
+Enable to check css. Supported values: `true, false`. Default: `false`.
 
-### `Blacklist`
+### `blacklist`
 
-Names of files or directories to blacklist.
-**This is not full paths**
+The names of files or directories to blacklist.
 
-Example:
-This will work
+**These are not full paths.**
+
+Correct Example:
 
 ```yaml
     - name: HTML5Validator
@@ -49,7 +49,7 @@ This will work
         blacklist: invalid
 ```
 
-This will not
+Incorrect Example:
 
 ```yaml
     - name: HTML5Validator
@@ -73,7 +73,7 @@ The exit code of the validation.
         root: tests/valid/
 ```
 
-There is a log file that is automatically created. To retrieve it you need to use Github's upload artifact action after the validator action.
+A log file is automatically created. To retrieve it, use Github's upload artifact action after the validator action.
 
 ```yaml
     - uses: actions/upload-artifact@v2

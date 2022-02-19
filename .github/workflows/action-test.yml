@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      # Need to manually change branch when making changes
     - name: No checkout test. Fail at Git Check
       uses: Cyb3r-Jak3/html5validator-action@allow_git_check_skipping
       with:
@@ -24,6 +25,7 @@ jobs:
       env:
         HTML5_ACTION_DEBUG: true
 
+      # Need to manually change branch when making changes
     - name: No checkout test. Passes at Git Check
       uses: Cyb3r-Jak3/html5validator-action@allow_git_check_skipping
       with:

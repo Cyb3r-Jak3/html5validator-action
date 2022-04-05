@@ -58,7 +58,7 @@ The exit code of the validation.
 A log file is automatically created. To retrieve it, use Github's upload artifact action after the validator action.
 
 ```yaml
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: log
         path: log.log

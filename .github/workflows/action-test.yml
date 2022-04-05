@@ -80,7 +80,7 @@ jobs:
         css: true
       continue-on-error: true
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: log
         path: log.log

@@ -19,3 +19,8 @@ if [[ "$EMPTY_OUT" != "no config file or root path given" ]]; then
  echo "Empty check failed"
  exit 1; 
 fi
+
+if [[ "$BAD_ROOT_OUT" != 1 ]]; then
+    echo "Badd root check failed"
+    exit 1;
+fi

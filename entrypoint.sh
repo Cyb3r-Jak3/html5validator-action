@@ -7,6 +7,7 @@ function main() {
         INPUT_LOG_LEVEL=DEBUG
         python --version
         html5validator --version
+        git --version
     fi
 
     if ! uses "${INPUT_ROOT}" && ! uses "${INPUT_CONFIG}"; then

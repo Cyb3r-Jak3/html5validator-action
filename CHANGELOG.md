@@ -1,6 +1,12 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
+## [v7.1.1] - 2022-04-17
+
+### Adds
+
+* Marking the repo directory as safe. [#31](https://github.com/Cyb3r-Jak3/html5validator-action/issues/31)
+
 ## [v7.1.0] - 2022-02-19
 
 ### Adds

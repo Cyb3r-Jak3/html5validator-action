@@ -9,7 +9,7 @@ function main() {
         html5validator --version
         git --version
     fi
-
+    git config --global --add safe.directory /github/workspace
     if ! uses "${INPUT_ROOT}" && ! uses "${INPUT_CONFIG}"; then
         echo ::error::"Need either root or config file"
         echo ::set-output name=result::"no config file or root path given"

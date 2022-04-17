@@ -81,7 +81,7 @@ jobs:
       continue-on-error: true
 
     - name: Check Bad Root
-      id: bad_root
+      id: badRoot
       uses: ./
       with:
         root: /tmp/missing
@@ -102,4 +102,4 @@ jobs:
         CONFIG_OUT: ${{ steps.config.outputs.result }}
         BLACKLIST_OUT: ${{ steps.blacklist.outputs.result }}
         EMPTY_OUT: ${{ steps.empty.outputs.result }}
-        BAD_ROOT_OUT: ${{ steps.empty.bad_root.result }}
+        BAD_ROOT_OUT: ${{ steps.empty.badRoot.result }}

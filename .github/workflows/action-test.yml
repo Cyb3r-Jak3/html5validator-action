@@ -80,6 +80,15 @@ jobs:
         css: true
       continue-on-error: true
 
+    - name: Check Bad Root
+      id: bad-root
+      uses: ./
+      with:
+        root: /tmp/missing
+        log_level: INFO
+        css: true
+      continue-on-error: true
+
     - uses: actions/upload-artifact@v3
       with:
         name: log
@@ -93,3 +102,4 @@ jobs:
         CONFIG_OUT: ${{ steps.config.outputs.result }}
         BLACKLIST_OUT: ${{ steps.blacklist.outputs.result }}
         EMPTY_OUT: ${{ steps.empty.outputs.result }}
+        BAD_ROOT_OUT: ${{ steps.bad-root.outputs.result }}

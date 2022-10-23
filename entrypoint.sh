@@ -14,14 +14,14 @@ function main() {
     git config --global --add safe.directory /github/workspace
 
     if ! uses "${INPUT_ROOT}" && ! uses "${INPUT_CONFIG}"; then
+        echo "result=no config file or root path given" >> $GITHUB_OUTPUT
         echo ::error::"Need either root or config file"
-        echo ::set-output name=result::"no config file or root path given"
         exit 1
     fi
     echo "Running Validator"
 
     if ! git -C . rev-parse 2>/dev/null && ! usesBoolean "${INPUT_SKIP_GIT_CHECK}"; then
-        echo ::set-output name=result::"There is no git respository detected"
+        echo "result=There is no git respository detected" >> $GITHUB_OUTPUT
         echo ::error::"There is no git respository detected"
         exit 1
     fi
@@ -45,7 +45,7 @@ function main() {
         result=${PIPESTATUS[0]}
     else
         if [ "${INPUT_ROOT}" == "" ]; then
-            echo ::set-output name=result::"There is no root given"
+            echo "result=There is no root given" >> $GITHUB_OUTPUT
             echo ::error::"There is no root given"
             exit 1
         fi
@@ -57,7 +57,7 @@ function main() {
         echo "$result"
     fi
 
-    echo ::set-output name=result::$result;
+    echo "result=$result" >> $GITHUB_OUTPUT
     exit "$result"
 }
 

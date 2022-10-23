@@ -1,6 +1,12 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
+## [v7.2.0] - 2022-10-23
+
+### Changes
+
+* Switch to using set output method. [#36](https://github.com/Cyb3r-Jak3/html5validator-action/issues/36)
+
 ## [v7.1.1] - 2022-04-17
 
 ### Adds

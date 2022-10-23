@@ -8,6 +8,6 @@ updates:
     assignees:
       - "Cyb3r-Jak3"
     commit-message:
-      prefix: "dep: Action Update"
+      prefix: "dep: actions"
     reviewers:
       - "Cyb3r-Jak3"

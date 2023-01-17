@@ -50,7 +50,7 @@ The exit code of the validation.
 ## Example usage
 
 ```yaml
-      uses: Cyb3r-Jak3/html5validator-action
+      uses: Cyb3r-Jak3/html5validator-action@v7.2.0
       with:
         root: tests/valid/
 ```

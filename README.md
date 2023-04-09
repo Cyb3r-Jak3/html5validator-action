@@ -1,6 +1,6 @@
 # HTML5 Validator Action
 
-![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Action%20Test/badge.svg?branch=master) ![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Integration/badge.svg) ![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Build%20Test/badge.svg?branch=master)
+![Actions Status](https://github.com/Cyb3r-Jak3/html5validator-action/workflows/Action%20Test/badge.svg?branch=master) [![Integration Test](https://github.com/Cyb3r-Jak3/html5validator-action/actions/workflows/integration.yml/badge.svg)](https://github.com/Cyb3r-Jak3/html5validator-action/actions/workflows/integration.yml)
 
 This action checks the syntax of your html files in the path you specify.  
 It used [html5validator](https://github.com/svenkreiss/html5validator) and a [docker image that I build from it](https://github.com/Cyb3r-Jak3/html5validator-docker).

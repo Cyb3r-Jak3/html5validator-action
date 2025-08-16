@@ -1,6 +1,12 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
+## [v8.0.0] - 2025-08-16
+
+### Changes
+
+* Update to using my version of html5validator. Uses more update to date vnu.jar file.
+
 ## [v7.2.0] - 2022-10-23
 
 ### Changes

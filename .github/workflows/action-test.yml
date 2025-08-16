@@ -7,9 +7,14 @@ on:
       - "tests/**"
       - "Dockerfile"
       - "entrypoint.sh"
-  schedule:
-    - cron: '0 0 * * 0' # Weekly on Sundays at 00:00
-
+  pull_request:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/action-test.yml"
+      - "tests/**"
+      - "Dockerfile"
+      - "entrypoint.sh"
 
 jobs:
   Test:

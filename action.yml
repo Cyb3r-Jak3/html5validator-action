@@ -30,7 +30,7 @@ inputs:
   skip_git_check:
     description: "Skip checking that code has been checked out"
     required: false
-    default: false
+    default: "false"
 outputs:
   result:
     description: 'The exit code'

@@ -9,6 +9,7 @@ function main() {
         html5validator --version
         git --version
     fi
+    html5validator --check-hash
 
     # Make sure repo is safe. See #31 for more info. Upstream Issue: https://github.com/actions/checkout/issues/760
     git config --global --add safe.directory /github/workspace

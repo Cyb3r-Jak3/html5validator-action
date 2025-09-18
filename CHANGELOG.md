@@ -1,6 +1,12 @@
 <!-- markdownlint-disable MD024 -->
 # Changelog
 
+## [v8.1.0] - 2025-09-17
+
+### Changes
+
+* Add new `match` input to only check files matching a specific pattern.
+
 ## [v8.0.0] - 2025-08-16
 
 ### Changes

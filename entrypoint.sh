@@ -41,6 +41,10 @@ function main() {
         BuildARGS+=" --also-check-css"
     fi
 
+    for match in $INPUT_MATCH; do
+        BuildARGS+=" --match $match"
+    done
+
     if uses "${INPUT_CONFIG}"; then
         html5validator --config "${INPUT_CONFIG}" |& tee log.log
         result=${PIPESTATUS[0]}

@@ -31,6 +31,10 @@ inputs:
     description: "Skip checking that code has been checked out"
     required: false
     default: "false"
+  match:
+    description: "Only check files matching this pattern"
+    required: false
+    default: "*.html"
 outputs:
   result:
     description: 'The exit code'

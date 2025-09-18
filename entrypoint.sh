@@ -38,7 +38,7 @@ function main() {
     fi
 
     if usesBoolean "${INPUT_CSS}"; then
-        BuildARGS+=" --also-check-css"
+        BuildARGS+=" --match *.css"
     fi
 
     for match in $INPUT_MATCH; do
